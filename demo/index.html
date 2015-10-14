@@ -1,0 +1,70 @@
+<!--
+@license
+Copyright (c) 2015 Team King of App. All rights reserved.
+This code may only be used under the MIT license.
+-->
+
+<!doctype html>
+<html>
+<head>
+  <title>ios-drawer-panel demo</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../../paper-styles/demo-pages.html">
+  <link rel="import" href="../../ios-button/ios-button.html">
+  <link rel="import" href="../ios-drawer-panel.html">
+
+  <style is="custom-style">
+    #iosDrawerPanel [main] {
+      background-color: var(--google-grey-100);
+    }
+
+    #iosDrawerPanel [drawer] {
+      border-right: 1px solid var(--google-grey-300);
+    }
+
+    #iosDrawerPanel[right-drawer] [drawer] {
+      border-left: 1px solid var(--google-grey-300);
+    }
+
+    ios-button {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body unresolved>
+  <ios-drawer-panel id="iosDrawerPanel">
+    <div drawer></div>
+    <div main>
+      <div>
+        <ios-button onclick="flipDrawer()">flip drawer</ios-button>
+      </div>
+      <div>
+        <ios-button ios-drawer-toggle>toggle drawer</ios-button>
+      </div>
+    </div>
+  </ios-drawer-panel>
+
+  <script>
+    (function(global) {
+      'use strict';
+
+      var DRAWER_ATTR = 'right-drawer';
+      var pdp = document.getElementById('iosDrawerPanel');
+
+      global.flipDrawer = function() {
+        if (pdp.hasAttribute(DRAWER_ATTR)) {
+          pdp.removeAttribute(DRAWER_ATTR);
+        } else {
+          pdp.setAttribute(DRAWER_ATTR, '');
+        }
+      }
+    }(this));
+  </script>
+</body>
+</html>
