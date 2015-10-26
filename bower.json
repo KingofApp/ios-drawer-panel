@@ -1,7 +1,7 @@
 {
   "name": "ios-drawer-panel",
-  "version": "0.1.0",
-  "description": "iOS material design icon button",
+  "version": "0.1.1",
+  "description": "A responsive drawer panel",
   "authors": [
     "Abdón Rodríguez Davila <thepeer@kingofapp.es>"
   ],
