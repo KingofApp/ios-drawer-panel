@@ -1,0 +1,161 @@
+<!--
+@license
+Copyright (c) 2015 Team King of App. All rights reserved.
+This code may only be used under the MIT license.
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../ios-behaviors/ios-button-behavior.html">
+<link rel="import" href="../ios-styles/ios-styles.html">
+
+<!--
+`ios-button` is an iOS design button.
+
+Example:
+
+    <ios-button>Button</ios-button>
+    <ios-button toggles>Toggle-able button</ios-button>
+
+A button that has `toggles` true will remain `active` after being clicked (and
+will have an `active` attribute set). For more information, see the `Polymer.IronButtonState`
+behavior.
+
+You may use custom DOM in the button body to create a variety of buttons. For example, to
+create a button with an icon and some text:
+
+    <ios-button>
+      <iron-icon icon="favorite"></iron-icon>
+      custom button content
+    </ios-button>
+
+### Styling
+
+The following custom properties and mixins are also available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--ios-button-color` | Color button | `--default-primary-color`
+`--ios-button-active-color` | Color button when is active | `--light-primary-color`
+`--ios-button-text-color` | Text color | `white`
+`--ios-button` | Mixin applied to the button | `{}`
+`--ios-button-disabled` | Mixin applied to the disabled button. Note that you can also use the `ios-button[disabled]` selector | `{}`
+`--ios-button-keyboard-focus` | Mixin applied to a button after it's been focused using the keyboard | `{}`
+
+@demo demo/index.html
+-->
+
+<dom-module id="ios-button">
+  <template>
+    <style>
+      :host {
+        appearance: none;
+          -moz-appearance: none;
+          -ms-appearance: none;
+          -webkit-appearance: none;
+        background: none;
+        border-radius: 5px;
+        border: 1px solid var(--ios-button-color, --default-primary-color);
+        box-sizing: border-box;
+        color: var(--ios-button-color, --default-primary-color);
+        cursor: pointer;
+        display: block;
+        font-family: inherit;
+        font-size: 14px;
+        height: 29px;
+        line-height: 27px;
+        margin: 0;
+        overflow: hidden;
+        padding: 0 10px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @apply(--ios-button);
+      }
+
+      :host .keyboard-focus {
+        font-weight: bold;
+
+        @apply(--ios-button-keyboard-focus);
+      }
+
+      :host([disabled]) {
+        opacity: 0.55;
+        pointer-events: none;
+
+        @apply(--ios-button-disabled);
+      }
+
+      .content > ::content * {
+        text-transform: inherit;
+      }
+
+
+      :host:active {
+        background: var(--ios-button-active-color, --light-primary-color);
+      }
+
+      :host([round]) {
+        border-radius: 27px;
+      }
+
+      :host([active]) {
+        background: var(--ios-button-color, --default-primary-color);
+        color: var(--ios-button-text-color, white);
+      }
+
+      :host([big]) {
+        font-size: 17px;
+        height: 44px;
+        line-height: 42px;
+      }
+
+      :host([fill]) {
+        background: var(--ios-button-color, --default-primary-color);
+        border: none;
+        color: var(--ios-button-text-color, white);
+      }
+
+      :host([fill]):active {
+        opacity: 0.8;
+      }
+
+      i.icon:first-child {
+        margin-right: 10px;
+      }
+
+      i.icon:last-child {
+        margin-left: 10px;
+      }
+
+      i.icon:first-child:last-child {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    </style>
+
+    <div class$="[[_computeContentClass(receivedFocusFromKeyboard)]]">
+      <content></content>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'ios-button',
+
+      behaviors: [
+        Polymer.IosButtonBehavior
+      ],
+
+      _computeContentClass: function(receivedFocusFromKeyboard) {
+        var className = 'content ';
+        if (receivedFocusFromKeyboard) {
+          className += ' keyboard-focus';
+        }
+        return className;
+      }
+    });
+  </script>
+</dom-module>

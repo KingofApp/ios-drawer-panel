@@ -1,0 +1,31 @@
+{
+  "name": "ios-button",
+  "version": "0.4.0",
+  "description": "iOS design button",
+  "authors": [
+    "Abdón Rodríguez Davila <thepeer@kingofapp.es>"
+  ],
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "ios",
+    "button"
+  ],
+  "main": "ios-button.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KingofApp/ios-button.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "ios-behaviors": "KingofApp/ios-behaviors#^0.1.0",
+    "ios-styles": "KingofApp/ios-styles#^0.2.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-icons": "PolymerElements/iron-icons#^1.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  }
+}

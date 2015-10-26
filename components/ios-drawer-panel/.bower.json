@@ -1,0 +1,44 @@
+{
+  "name": "ios-drawer-panel",
+  "description": "A responsive drawer panel",
+  "authors": [
+    "Abdón Rodríguez Davila <thepeer@kingofapp.es>"
+  ],
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "ios",
+    "drawer",
+    "responsive",
+    "layout"
+  ],
+  "main": "ios-drawer-panel.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/KingofApp/ios-drawer-panel.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0",
+    "iron-media-query": "PolymerElements/iron-media-query#^1.0.0",
+    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#^1.0.0",
+    "iron-selector": "PolymerElements/iron-selector#^1.0.0"
+  },
+  "devDependencies": {
+    "ios-button": "KingofApp/ios-button#^0.4.0",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  },
+  "homepage": "https://github.com/KingofApp/ios-drawer-panel",
+  "_release": "591ea83e88",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "591ea83e881d284281797816ffe2f706a21a3636"
+  },
+  "_source": "git://github.com/KingofApp/ios-drawer-panel.git",
+  "_target": "master",
+  "_originalSource": "KingofApp/ios-drawer-panel",
+  "_direct": true
+}
